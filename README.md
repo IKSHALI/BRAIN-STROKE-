@@ -18,7 +18,7 @@ library(tidyverse)
 
 mydata = read.csv("brain_stroke.csv")
 
-# display first 5 entries
+# display first 20 entries
 
 head(mydata,20)
 
@@ -235,7 +235,7 @@ model = lm(age ~ stroke,data = mydata)
 
 summary(model)
 
-plot(mydata$age,women$stroke,
+plot(mydata$age,mydata$stroke,
      xlab = "age",
      ylab = "stroke")
 
@@ -243,7 +243,7 @@ model = lm(avg_glucose_level ~ stroke,data = mydata)
 
 summary(model)
 
-plot(mydata$avg_glucose_level,women$stroke,
+plot(mydata$avg_glucose_level,mydata$stroke,
      xlab = "avg_glucose_level",
      ylab = "stroke")
 
@@ -251,7 +251,7 @@ model = lm(bmi ~ stroke,data = mydata)
 
 summary(model)
 
-plot(mydata$bmi,women$stroke,
+plot(mydata$bmi,mydata$stroke,
      xlab = "bmi",
      ylab = "stroke")
 
@@ -310,4 +310,3 @@ multiple_fit = lm(age ~ avg_glucose_level + bmi + stroke,
                   data = mydata)
 
 summary(multiple_fit)
-
